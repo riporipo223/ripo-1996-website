@@ -694,7 +694,7 @@
       <div style="text-align:center; margin:18px 0;">
         <div style="font-family:'Comic Sans MS',cursive; color:var(--cyan); margin-bottom:4px;" id="counterLabel">YOU ARE VISITOR NUMBER:</div>
         <div class="counter-box" id="counter">------</div>
-        <div style="font-size:9px; color:#666; margin-top:4px;">(counts a real page view via Firestore — shows ?????? until you fill in your firebaseConfig)</div>
+        <div style="font-size:9px; color:#666; margin-top:4px;">(counts a real page view via Firestore)</div>
       </div>
 
       <table class="section glitter-border" id="contact">
@@ -793,16 +793,14 @@
     doc, runTransaction, serverTimestamp
   } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
-  // ~~~~~ PASTE YOUR FIREBASE PROJECT CONFIG HERE ~~~~~
   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDlEbikO7FknyYOqfBwejP7mdTkkZoeWBk",
+    authDomain: "ripo-c7b4b.firebaseapp.com",
+    projectId: "ripo-c7b4b",
+    storageBucket: "ripo-c7b4b.firebasestorage.app",
+    messagingSenderId: "275591690113",
+    appId: "1:275591690113:web:89339001c2dfb68d2a1a80"
   };
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
