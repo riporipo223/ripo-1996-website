@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg-navy:#000033;
@@ -47,7 +47,7 @@
   @keyframes blinker { 50% { opacity: 0; } }
 
   .rainbow-text{
-    font-family:"Comic Sans MS", "Comic Sans", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", "Comic Sans", cursive, sans-serif;
     font-weight:bold;
     background-image: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
     background-size: 400% 100%;
@@ -90,7 +90,7 @@
     white-space:nowrap;
     padding-left:100%;
     animation: marquee 16s linear infinite;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     color: var(--yellow);
     font-weight:bold;
   }
@@ -155,7 +155,7 @@
     padding:14px 10px 6px;
   }
   .titlebar h1{
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:34px;
     margin:6px 0;
     text-shadow: 2px 2px 0 var(--hotpink);
@@ -168,7 +168,7 @@
     gap:8px;
     background: repeating-linear-gradient(45deg, #ffff00, #ffff00 12px, #000 12px, #000 24px);
     color:#000;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-weight:bold;
     padding:5px;
     font-size:13px;
@@ -184,7 +184,7 @@
     padding:8px;
     background:#000;
     border-bottom:2px dashed var(--purple);
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:14px;
   }
   .navbar a{ margin:0 6px; text-decoration:none; }
@@ -201,7 +201,7 @@
   table.section caption{
     caption-side:top;
     text-align:left;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:20px;
     color:var(--yellow);
     background:#1a0033;
@@ -220,13 +220,13 @@
     color:var(--cyan);
     width:150px;
     text-align:left;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:13px;
   }
 
   .about-row{ display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; }
   .avatar-box{
-    width:120px; text-align:center; font-family:"Comic Sans MS",cursive; font-size:11px; color:#fff;
+    width:120px; text-align:center; font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-size:11px; color:#fff;
   }
   .avatar-frame{
     position:relative;
@@ -250,7 +250,7 @@
   .avatar-badge{
     position:absolute; top:-4px; right:-4px;
     background:var(--hotpink); color:#fff;
-    font-family:"Comic Sans MS",cursive; font-weight:bold;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-weight:bold;
     font-size:9px; padding:2px 5px;
     border:1px solid #fff;
     transform:rotate(8deg);
@@ -311,7 +311,7 @@
 
   .webring{
     text-align:center;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:12px;
     padding:10px;
     color:#fff;
@@ -401,7 +401,7 @@
     border:2px solid #7a3d00;
   }
   .help-banner .title-bar h3{
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-size:30px;
     color:var(--yellow);
     text-shadow: 2px 2px 0 #000;
@@ -433,7 +433,7 @@
   .help-banner .black-box{
     background:#000;
     color:#fff;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     padding:16px 12px;
     margin-top:14px;
     border:2px solid var(--yellow);
@@ -465,7 +465,7 @@
     align-items:center;
     gap:6px;
     text-decoration:none !important;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     font-weight:bold;
     font-size:14px;
     padding:9px 18px;
@@ -522,7 +522,7 @@
     background:#c0c0c0;
     border:2px outset #fff;
     width:300px; max-width:88vw;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
     box-shadow:5px 5px 0 rgba(0,0,0,0.5);
   }
   .end-modal-titlebar{
@@ -540,7 +540,7 @@
   .end-modal-body .icon{ font-size:30px; display:block; margin-bottom:8px; }
   .end-modal-footer{ text-align:center; padding:10px 0 16px; }
   .end-modal-footer button{
-    font-family:"Comic Sans MS", cursive; font-weight:bold; font-size:12px;
+    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-weight:bold; font-size:12px;
     background:#c0c0c0; border:2px outset #fff; padding:5px 18px; cursor:pointer;
   }
   .end-modal-footer button:active{ border-style:inset; }
@@ -567,7 +567,7 @@
         <div class="title-cat-trail"></div>
         <span class="title-cat">🐱</span>
       </div>
-      <div style="font-family:'Comic Sans MS',cursive; font-size:14px;">
+      <div style="font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; font-size:14px;">
         <span class="blink">●</span> a computer science guy building things on the internet <span class="blink">●</span>
       </div>
       <div class="sparkle">*~*~*~*~*~*~*~*~*~*~*~*</div>
@@ -616,7 +616,7 @@
         <tr>
           <td>
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-              <b style="color:var(--yellow); font-family:'Comic Sans MS',cursive; font-size:17px;">📌 ILoveMusic</b>
+              <b style="color:var(--yellow); font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; font-size:17px;">📌 ILoveMusic</b>
               <span class="blink" style="color:var(--hotpink); font-weight:bold; font-size:12px;">★ ACTIVE BUILD ★</span>
             </div>
             <div style="margin-top:8px;">
@@ -692,7 +692,7 @@
       </table>
 
       <div style="text-align:center; margin:18px 0;">
-        <div style="font-family:'Comic Sans MS',cursive; color:var(--cyan); margin-bottom:4px;" id="counterLabel">YOU ARE VISITOR NUMBER:</div>
+        <div style="font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; color:var(--cyan); margin-bottom:4px;" id="counterLabel">YOU ARE VISITOR NUMBER:</div>
         <div class="counter-box" id="counter">------</div>
         <div style="font-size:9px; color:#666; margin-top:4px;">(counts a real page view via Firestore)</div>
       </div>
@@ -706,7 +706,7 @@
           <div class="btn-row">
             <a class="retro-btn" id="emailBtn" href="#"><span class="ico">✉️</span> EMAIL ME</a>
           </div>
-          <div style="text-align:center; font-family:'Comic Sans MS',cursive; color:var(--yellow); font-size:12px; margin:14px 0 6px;">
+          <div style="text-align:center; font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; color:var(--yellow); font-size:12px; margin:14px 0 6px;">
             ☆ or catch me on the socials ☆
           </div>
           <div class="btn-row">
