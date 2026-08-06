@@ -1,8 +1,8 @@
-# ripo-1996-website
+# Ripo Personal Page
 
 Portfolio website with a retro 90s-inspired design, built as a static HTML page with inline CSS animations.
 
-## Project structure
+## Project Structure
 
 - `index.html` — main homepage
 - `ripo-1996.html` — alternate homepage version
