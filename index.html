@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>~*~ RIPO'S HOMEPAGE ~*~</title>
-<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
@@ -144,9 +144,9 @@
 
   .page{
     max-width:780px;
-    margin:18px auto;
+    margin:0 auto 18px;
     background:#000022;
-    border:6px ridge var(--tile-border);
+    border:6px solid var(--tile-border);
     padding:0;
   }
 
@@ -208,6 +208,12 @@
     padding:6px 10px;
     border:2px solid var(--purple);
     border-bottom:none;
+  }
+  @media (max-width:480px){
+    #contact > caption{
+      font-size:15px;
+      text-align:center;
+    }
   }
   table.section td, table.section th{
     border:1px solid #4b0082;
@@ -296,6 +302,11 @@
     padding:7px;
   }
   .guestbook-form textarea{ resize:vertical; min-height:54px; }
+  @media (max-width:480px){
+    .guestbook-form input, .guestbook-form textarea{
+      font-size:16px;
+    }
+  }
   #gbStatus{ font-size:11px; color:#9f9; margin-top:6px; text-align:center; min-height:14px; }
 
   .counter-box{
@@ -315,6 +326,15 @@
     font-size:12px;
     padding:10px;
     color:#fff;
+  }
+  .webring .ring-line{
+    display:inline-block;
+    white-space:nowrap;
+  }
+  @media (max-width:480px){
+    .webring .ring-line{
+      font-size:9px;
+    }
   }
 
   footer{
@@ -593,7 +613,7 @@
             <div class="about-row">
               <div class="avatar-box">
                 <div class="avatar-frame">
-                  <img src="ripoo.jpg" alt="Ripo holding a Panasonic camera by a lake" class="avatar-photo" width="120" height="120" decoding="async">
+                  <img src="images/ripoo.jpg" alt="Ripo holding a Panasonic camera by a lake" class="avatar-photo" width="120" height="120" decoding="async">
                   <div class="avatar-dither"></div>
                   <div class="avatar-badge">★ IT'S ME ★</div>
                 </div>
@@ -719,7 +739,7 @@
       </table>
 
       <div class="webring">
-        <div><span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▂▃▅▇</span> MEMBER OF THE INDIE DEV WEBRING <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▇▅▃▂</span></div>
+        <div><span class="ring-line"><span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▂▃▅▇</span> MEMBER OF THE INDIE DEV WEBRING <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▇▅▃▂</span></span></div>
         <div style="margin-top:6px;">
           « <a href="#" onclick="showEndModal(0); return false;">PREV SITE</a> &nbsp;|&nbsp; <a href="#" onclick="showEndModal(1); return false;">RANDOM SITE</a> &nbsp;|&nbsp; <a href="#" onclick="showEndModal(2); return false;">NEXT SITE</a> »
         </div>
