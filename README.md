@@ -1,19 +1,15 @@
 # Ripo Personal Page
 
-Portfolio website with a retro 90s-inspired design, built as a static HTML page with inline CSS animations.
+Minimal, single-page personal site. Left-aligned layout, Inter typeface, no nav/header, with a dark footer linking out to work and social profiles.
 
 ## Project Structure
 
-- `index.html` — main homepage
+- `index.html` — the entire site (markup + inline CSS)
+- `ripo-portrait.jpg` — portrait photo used on the page
 - `README.md` — project overview
-- `firebase.js` — Firebase script
-- `firestore.rules` — Firestore security rules
-- `images/` — image assets
-  - `favicon.png`
-  - `ripoo.jpg`
 
 ## Notes
 
-- Image assets have been moved into `images/` for cleaner project structure.
-- `index.html` references `images/favicon.png` and `images/ripoo.jpg`.
-- The styling is embedded directly in the page, so no build step is required.
+- No build step — it's a single static HTML file, open it directly or serve the folder as-is.
+- The favicon is an inline SVG (a light blue dot) embedded directly in `index.html`'s `<head>`, so no separate icon file is needed.
+- `firebase.js` and `firestore.rules` are left over from an earlier version of the site and are not referenced by the current `index.html`.
