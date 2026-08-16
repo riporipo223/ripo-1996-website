@@ -2,952 +2,205 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>~*~ RIPO'S HOMEPAGE ~*~</title>
-<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ripo</title>
+<meta name="description" content="hi im ripo.">
+<meta property="og:title" content="ripo">
+<meta property="og:description" content="hi im ripo.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-navy:#000033;
-    --purple:#9900cc;
-    --lime:#00ff66;
-    --yellow:#ffff00;
-    --hotpink:#ff00cc;
-    --cyan:#00ffff;
-    --tile-border:#c0c0c0;
+    --bg: #ffffff;
+    --ink: #001122;
+    --muted: #888888;
+    --link: #0099ff;
+    --link-hover: #0088ff;
+    --line: #e5e5e5;
+    --footer-bg: #121210;
+    --footer-ink: #f2f1ec;
+    --footer-muted: #8a8880;
+    --footer-line: #2a2a26;
+    --sans: "Inter", "Inter Placeholder", sans-serif;
   }
 
-  * { box-sizing:border-box; }
+  * { box-sizing: border-box; }
 
-  html,body{
-    margin:0; padding:0;
-    background-color: var(--bg-navy);
-    background-image:
-      radial-gradient(1px 1px at 10% 20%, #ffffff 100%, transparent 100%),
-      radial-gradient(1px 1px at 80% 10%, #ffffff 100%, transparent 100%),
-      radial-gradient(2px 2px at 40% 60%, #ffff99 100%, transparent 100%),
-      radial-gradient(1px 1px at 60% 80%, #ffffff 100%, transparent 100%),
-      radial-gradient(1px 1px at 90% 50%, #ffff99 100%, transparent 100%),
-      radial-gradient(1px 1px at 25% 90%, #ffffff 100%, transparent 100%),
-      radial-gradient(2px 2px at 70% 35%, #ffffff 100%, transparent 100%);
-    background-repeat: repeat;
-    background-size: 220px 220px;
-    color: var(--lime);
-    font-family: "Times New Roman", Times, serif;
-    font-size: 16px;
-    cursor: url('data:image/x-icon;base64,'), auto;
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
   }
 
-  a { color: var(--cyan); }
-  a:visited { color: var(--purple); }
-  a:hover { color: var(--yellow); background:#000; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
 
-  .blink { animation: blinker 1s step-start infinite; }
-  @keyframes blinker { 50% { opacity: 0; } }
-
-  .rainbow-text{
-    font-family:"Comic Sans MS", "Comic Neue", "Comic Sans", cursive, sans-serif;
-    font-weight:bold;
-    background-image: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow-slide 4s linear infinite;
-  }
-  @keyframes rainbow-slide{
-    0%{ background-position: 0% 0; }
-    100%{ background-position: 400% 0; }
+  main{
+    max-width: 600px;
+    margin: 0;
+    padding: 50px;
   }
 
-  .marquee-wrap{
-    width:100%;
-    overflow:hidden;
-    background:#000;
-    border-top:3px double var(--yellow);
-    border-bottom:3px double var(--yellow);
-    padding:4px 0;
-  }
-  .marquee-wrap.led{
-    background-color:#000;
-    background-image: repeating-linear-gradient(90deg, rgba(0,255,65,0.06) 0px 1px, transparent 1px 3px);
-    border-top:3px solid #003300;
-    border-bottom:3px solid #003300;
-    position:relative;
-  }
-  .marquee-wrap.led::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.6) 1px, transparent 1.3px);
-    background-size:3px 3px;
-    pointer-events:none;
-    z-index:2;
-    mix-blend-mode:multiply;
-  }
-  .marquee-track{
-    display:inline-block;
-    white-space:nowrap;
-    padding-left:100%;
-    animation: marquee 16s linear infinite;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    color: var(--yellow);
-    font-weight:bold;
-  }
-  .marquee-track.led-text{
-    font-family:"DotGothic16", "Courier New", monospace;
-    font-weight:normal;
-    color:#00ff41;
-    letter-spacing:4px;
-    text-shadow: 0 0 3px #00ff41, 0 0 9px #00ff41;
-  }
-  @keyframes marquee{
-    0%{ transform:translateX(0); }
-    100%{ transform:translateX(-100%); }
+  h1{
+    font-family: var(--sans);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    margin: 0 0 20px;
+    line-height: 36px;
+    color: var(--ink);
   }
 
-  /* ~*~ FLAME DIVIDER — original hand-drawn SVG flame strip, layered + animated ~*~ */
-  .flame-strip{
-    position:relative;
-    height:52px;
-    overflow:hidden;
-    background:transparent;
-  }
-  .flame-strip .layer{
-    position:absolute;
-    left:0; bottom:0;
-    width:100%; height:100%;
-    background-repeat:repeat-x;
-    background-size:96px 100%;
-    transform-origin:bottom center;
-    image-rendering:pixelated;
-  }
-  .flame-strip .layer.back{
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 50' preserveAspectRatio='none' shape-rendering='crispEdges'><defs><linearGradient id='g2' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%23ffab91'/><stop offset='22%25' stop-color='%23ffab91'/><stop offset='22%25' stop-color='%23ff5722'/><stop offset='55%25' stop-color='%23ff5722'/><stop offset='55%25' stop-color='%23b71c1c'/><stop offset='100%25' stop-color='%23b71c1c'/></linearGradient></defs><path d='M0,50 L0,32 L6,32 L6,44 L12,44 L12,20 L18,20 L18,38 L24,38 L24,10 L30,10 L30,28 L36,28 L36,16 L42,16 L42,40 L48,40 L48,6 L54,6 L54,24 L60,24 L60,34 L66,34 L66,14 L72,14 L72,30 L78,30 L78,18 L84,18 L84,42 L90,42 L90,26 L96,26 L96,50 Z' fill='url(%23g2)'/></svg>");
-    opacity:0.8;
-    animation: flame-flow-back 1.6s steps(8) infinite, flame-flicker-2 0.5s steps(5) infinite;
-  }
-  .flame-strip .layer.front{
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 50' preserveAspectRatio='none' shape-rendering='crispEdges'><defs><linearGradient id='g1' x1='0' y1='0' x2='0' y2='1'><stop offset='0%25' stop-color='%23fff9c4'/><stop offset='18%25' stop-color='%23fff9c4'/><stop offset='18%25' stop-color='%23ffeb3b'/><stop offset='40%25' stop-color='%23ffeb3b'/><stop offset='40%25' stop-color='%23ff9800'/><stop offset='68%25' stop-color='%23ff9800'/><stop offset='68%25' stop-color='%23e64a19'/><stop offset='100%25' stop-color='%23e64a19'/></linearGradient></defs><path d='M0,50 L0,26 L6,26 L6,40 L12,40 L12,8 L18,8 L18,22 L24,22 L24,36 L30,36 L30,4 L36,4 L36,30 L42,30 L42,14 L48,14 L48,38 L54,38 L54,10 L60,10 L60,32 L66,32 L66,18 L72,18 L72,44 L78,44 L78,6 L84,6 L84,24 L90,24 L90,34 L96,34 L96,50 Z' fill='url(%23g1)'/></svg>");
-    animation: flame-flow-front 1.1s steps(10) infinite, flame-flicker-1 0.4s steps(4) infinite;
-  }
-  @keyframes flame-flow-front{ from{ background-position-x:0; } to{ background-position-x:-96px; } }
-  @keyframes flame-flow-back{ from{ background-position-x:0; } to{ background-position-x:96px; } }
-  @keyframes flame-flicker-1{
-    0%,100%{ transform:scaleY(1) translateY(0); filter:brightness(1); }
-    50%{ transform:scaleY(1.06) translateY(-1px); filter:brightness(1.18); }
-  }
-  @keyframes flame-flicker-2{
-    0%,100%{ transform:scaleY(1) translateY(0); filter:brightness(0.92); }
-    50%{ transform:scaleY(0.93) translateY(1px); filter:brightness(1.1); }
+  .body-copy{
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.035em;
+    color: var(--muted);
   }
 
-  .page{
-    max-width:780px;
-    margin:0 auto 18px;
-    background:#000022;
-    border:6px solid var(--tile-border);
-    padding:0;
+  .body-copy p { margin: 0 0 30px; }
+  .body-copy p:last-child { margin-bottom: 0; }
+
+  .portrait{
+    margin: 20px 0;
+  }
+  .portrait img{
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    filter: grayscale(4%);
+  }
+  .portrait figcaption{
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: -0.01em;
   }
 
-  .titlebar{
-    text-align:center;
-    padding:14px 10px 6px;
+  .ps{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
   }
-  .titlebar h1{
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:34px;
-    margin:6px 0;
-    text-shadow: 2px 2px 0 var(--hotpink);
-    letter-spacing:1px;
-  }
-  .under-construction-bar{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    background: repeating-linear-gradient(45deg, #ffff00, #ffff00 12px, #000 12px, #000 24px);
-    color:#000;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-weight:bold;
-    padding:5px;
-    font-size:13px;
-    border-top:2px solid #000;
-    border-bottom:2px solid #000;
-  }
-  .under-construction-bar span{
-    background:#000033; color:#ffff00; padding:2px 8px;
-  }
-
-  .navbar{
-    text-align:center;
-    padding:8px;
-    background:#000;
-    border-bottom:2px dashed var(--purple);
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:14px;
-  }
-  .navbar a{ margin:0 6px; text-decoration:none; }
-  .navbar a::before{ content:"★ "; }
-
-  .content{ padding:14px 22px; }
-
-  table.section{
-    width:100%;
-    border-collapse:collapse;
-    margin:14px 0 22px;
-    border:2px solid var(--purple);
-  }
-  table.section caption{
-    caption-side:top;
-    text-align:left;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:20px;
-    color:var(--yellow);
-    background:#1a0033;
-    padding:6px 10px;
-    border:2px solid var(--purple);
-    border-bottom:none;
-  }
-  @media (max-width:480px){
-    #contact > caption{
-      font-size:15px;
-      text-align:center;
-    }
-  }
-  table.section td, table.section th{
-    border:1px solid #4b0082;
-    padding:8px 10px;
-    vertical-align:top;
-    color:#e0ffe0;
-  }
-  table.section th{
-    background:#1a0033;
-    color:var(--cyan);
-    width:150px;
-    text-align:left;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:13px;
-  }
-
-  .about-row{ display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; }
-  .avatar-box{
-    width:120px; text-align:center; font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-size:11px; color:#fff;
-  }
-  .avatar-frame{
-    position:relative;
-    width:120px; height:120px;
-    border:3px inset #999;
-    overflow:hidden;
-  }
-  .avatar-photo{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-    filter: contrast(1.12) saturate(0.82) brightness(0.96);
-  }
-  .avatar-dither{
-    position:absolute; inset:0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.32) 1px, transparent 1.2px);
-    background-size:3px 3px;
-    mix-blend-mode:multiply;
-    pointer-events:none;
-  }
-  .avatar-badge{
-    position:absolute; top:-4px; right:-4px;
-    background:var(--hotpink); color:#fff;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-weight:bold;
-    font-size:9px; padding:2px 5px;
-    border:1px solid #fff;
-    transform:rotate(8deg);
-    animation: blinker 1.2s step-start infinite;
-  }
-
-  .badge-row{
-    display:flex; flex-wrap:wrap; gap:6px; align-items:center; justify-content:center;
-    padding:10px 0;
-  }
-  .badge{
-    width:88px; height:31px;
-    background:#000; color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    font-size:10px; font-family:"Courier New", monospace;
-    border:1px solid #666;
-    text-align:center;
-    line-height:1.1;
-  }
-  .badge.b1{ background:#ff8800; color:#000; }
-  .badge.b2{ background:#003366; color:var(--cyan); }
-  .badge.b3{ background:#330033; color:var(--hotpink); }
-  .badge.b4{ background:#003300; color:var(--lime); }
-  .badge.b5{ background:#222; color:var(--yellow); }
-
-  .guestbook{
-    background:#001a00;
-    border:2px groove var(--lime);
-    padding:10px;
-    font-family:"Courier New", monospace;
-    font-size:13px;
-  }
-  .guestbook .entry{ border-bottom:1px dotted #336633; padding:6px 0; }
-  .guestbook .entry b{ color:var(--yellow); }
-
-  .guestbook-form{ display:flex; flex-direction:column; gap:6px; margin-top:12px; }
-  .guestbook-form input, .guestbook-form textarea{
-    font-family:"Courier New", monospace;
-    font-size:13px;
-    background:#001a00;
-    color:#baffba;
-    border:2px inset #336633;
-    padding:7px;
-  }
-  .guestbook-form textarea{ resize:vertical; min-height:54px; }
-  @media (max-width:480px){
-    .guestbook-form input, .guestbook-form textarea{
-      font-size:16px;
-    }
-  }
-  #gbStatus{ font-size:11px; color:#9f9; margin-top:6px; text-align:center; min-height:14px; }
-
-  .counter-box{
-    display:inline-flex;
-    background:#000;
-    border:2px inset #888;
-    padding:4px 8px;
-    font-family:"Courier New", monospace;
-    color:#00ff00;
-    letter-spacing:3px;
-    font-size:20px;
-  }
-
-  .webring{
-    text-align:center;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:12px;
-    padding:10px;
-    color:#fff;
-  }
-  .webring .ring-line{
-    display:inline-block;
-    white-space:nowrap;
-  }
-  @media (max-width:480px){
-    .webring .ring-line{
-      font-size:9px;
-    }
-  }
+  .ps a { color: var(--link); }
+  .ps a:hover { color: var(--link-hover); }
 
   footer{
-    text-align:center;
-    font-size:12px;
-    padding:14px 8px 18px;
-    color:#9999ff;
-    font-family:"Courier New", monospace;
+    background: var(--footer-bg);
+    color: var(--footer-ink);
+    padding: 56px 24px 28px 24px;
+    font-family: var(--sans);
   }
 
-  .sparkle{ color:var(--yellow); }
-
-  .icon-spin{ display:inline-block; animation: spin-sparkle 3s linear infinite; }
-  @keyframes spin-sparkle{ 0%{ transform:rotate(0deg) scale(1); } 50%{ transform:rotate(180deg) scale(1.3); } 100%{ transform:rotate(360deg) scale(1); } }
-
-  .shake{ animation: shake-it 0.4s ease-in-out infinite; display:inline-block; }
-  @keyframes shake-it{
-    0%,100%{ transform: translate(0,0) rotate(0deg); }
-    25%{ transform: translate(-1px,-1px) rotate(-2deg); }
-    75%{ transform: translate(1px,1px) rotate(2deg); }
+  .footer-inner{
+    max-width: 1080px;
+    margin: 0;
   }
 
-  .bounce{ display:inline-block; animation: bounce-it 0.9s ease-in-out infinite; }
-  @keyframes bounce-it{
-    0%,100%{ transform: translateY(0); }
-    50%{ transform: translateY(-6px); }
+  .footer-top{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 320px;
+    gap: 40px;
   }
 
-  /* ~*~ IN-PLACE WALKING RAINBOW CAT (original, choppy low-fps style) ~*~ */
-  .title-cat-box{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:4px 0 2px;
+  .footer-col .label{
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--footer-muted);
+    margin-bottom: 16px;
   }
-  .title-cat-trail{
-    width:56px; height:10px;
-    background: repeating-linear-gradient(90deg,
-      #ff0000 0 9px, #ff9900 9px 18px, #ffee00 18px 27px,
-      #33ff00 27px 36px, #0099ff 36px 45px, #9900ff 45px 54px);
-    margin-right:-2px;
-    animation: trail-flicker 0.4s steps(2) infinite;
-    image-rendering: pixelated;
+  .footer-col a{
+    display:block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--footer-ink);
+    border-bottom: none;
+    margin-bottom: 12px;
+    opacity: 0.92;
   }
-  @keyframes trail-flicker{
-    0%{ filter:brightness(1); }
-    50%{ filter:brightness(0.6); }
-    100%{ filter:brightness(1); }
+  .footer-col a:hover{ opacity: 1; text-decoration: underline; }
+  .footer-col a.disabled{
+    color: var(--footer-muted);
+    cursor: default;
   }
-  .title-cat{
-    font-size:24px;
-    display:inline-block;
-    animation: walk-in-place 0.4s steps(4) infinite;
-    image-rendering: pixelated;
-  }
-  @keyframes walk-in-place{
-    0%{ transform: translateY(0) scaleX(1); }
-    25%{ transform: translateY(-3px) scaleX(1); }
-    50%{ transform: translateY(0) scaleX(-1); }
-    75%{ transform: translateY(-3px) scaleX(-1); }
-    100%{ transform: translateY(0) scaleX(1); }
-  }
+  .footer-col a.disabled:hover{ text-decoration: none; }
 
-  /* ~*~ HELP RIPO SURVIVE (original parody ad, inspired by the genre of 90s novelty donation banners) ~*~ */
-  .help-banner{
-    max-width:600px;
-    margin:16px auto;
-    background: linear-gradient(180deg, #7ed321, #3c8c0c);
-    background-image:
-      radial-gradient(2px 2px at 10% 15%, #fff, transparent),
-      radial-gradient(2px 2px at 80% 25%, #fff, transparent),
-      radial-gradient(2px 2px at 30% 70%, #fff, transparent),
-      radial-gradient(2px 2px at 90% 80%, #fff, transparent),
-      radial-gradient(2px 2px at 55% 45%, #fff, transparent),
-      linear-gradient(180deg, #7ed321, #3c8c0c);
-    background-repeat:no-repeat;
-    padding:10px;
-    border:4px outset #ffee00;
-    text-align:center;
+  @media (max-width: 640px){
+    main{ padding: 40px 24px 70px; }
+    .body-copy{ font-size: 18px; line-height: 28px; }
+    .footer-top{ grid-template-columns: 1fr 1fr; }
+    footer{ padding: 44px 24px 24px; }
   }
-  .help-banner .title-bar{
-    background: linear-gradient(180deg, #ffb347, #ff6600);
-    padding:12px 10px;
-    border:2px solid #7a3d00;
-  }
-  .help-banner .title-bar h3{
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-size:30px;
-    color:var(--yellow);
-    text-shadow: 2px 2px 0 #000;
-    margin:0;
-    text-transform:uppercase;
-  }
-  .help-banner .title-bar .underline{ height:3px; background:var(--yellow); width:75%; margin:6px auto; }
-  .help-banner .title-bar .sub{ color:#1a0d00; font-weight:bold; font-size:13px; margin-top:4px; }
-
-  .donate-btn-wrap{ margin:16px 0; }
-  .donate-btn{
-    display:inline-block;
-    background: linear-gradient(180deg, #c81414, #7a0000);
-    color:#fff !important;
-    font-family:Georgia, serif;
-    font-weight:bold;
-    font-size:18px;
-    line-height:1.3;
-    padding:14px 32px;
-    border-top:3px solid #ff6666;
-    border-left:3px solid #ff6666;
-    border-right:3px solid #4a0000;
-    border-bottom:3px solid #4a0000;
-    text-decoration:none !important;
-    box-shadow:0 4px 10px rgba(0,0,0,0.5);
-  }
-  .donate-btn:hover{ filter:brightness(1.15); animation: shake-it 0.3s ease-in-out infinite; }
-
-  .help-banner .black-box{
-    background:#000;
-    color:#fff;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    padding:16px 12px;
-    margin-top:14px;
-    border:2px solid var(--yellow);
-  }
-  .help-banner .appreciate{ font-size:15px; font-weight:bold; }
-  .help-banner .appreciate .small{ display:block; font-size:11px; font-weight:normal; color:#ccc; margin-top:4px; }
-  .help-banner .visitors-label{ color:var(--yellow); font-weight:bold; margin-top:12px; font-size:13px; }
-  .live-dot{
-    display:inline-block; width:8px; height:8px; border-radius:50%;
-    background:#ff3333; margin-right:6px;
-    animation: blinker 1s step-start infinite;
-  }
-  .help-banner .live-counter{
-    font-family:"Courier New", monospace;
-    font-size:32px;
-    letter-spacing:5px;
-    color:#39ff14;
-    margin-top:6px;
-    text-shadow:0 0 6px #39ff14;
-  }
-  .help-banner .fine-print{ font-size:9px; color:#999; margin-top:10px; line-height:1.5; }
-  .help-banner .fine-print a{ color:#39ff14; }
-
-  /* ~*~ ALAY 3D BUTTONS ~*~ */
-  .btn-row{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:8px 0; }
-  .retro-btn{
-    position:relative;
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    text-decoration:none !important;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    font-weight:bold;
-    font-size:14px;
-    padding:9px 18px;
-    color:#000 !important;
-    background: linear-gradient(180deg, #fff77a 0%, #ffd400 45%, #ff9d00 100%);
-    border-top:3px solid #fffbcc;
-    border-left:3px solid #fffbcc;
-    border-right:3px solid #7a4a00;
-    border-bottom:3px solid #7a4a00;
-    box-shadow: 0 0 0 2px #000, 0 0 14px 2px var(--hotpink);
-    text-shadow: 1px 1px 0 #fff, 0 0 4px #fff;
-  }
-  .retro-btn.pink{ background: linear-gradient(180deg, #ffd6f7 0%, #ff5ce0 45%, #c400a0 100%); box-shadow:0 0 0 2px #000, 0 0 14px 2px var(--cyan); }
-  .retro-btn.cyan{ background: linear-gradient(180deg, #d6ffff 0%, #5ce0ff 45%, #0090c4 100%); box-shadow:0 0 0 2px #000, 0 0 14px 2px var(--yellow); }
-  .retro-btn.green{ background: linear-gradient(180deg, #e2ffb0 0%, #8cff3d 45%, #3f9c00 100%); box-shadow:0 0 0 2px #000, 0 0 14px 2px var(--hotpink); }
-  .retro-btn:hover{
-    filter: brightness(1.15);
-    animation: shake-it 0.25s ease-in-out infinite;
-    box-shadow: 0 0 0 2px #000, 0 0 22px 6px var(--yellow);
-  }
-  .retro-btn:active{
-    border-top-color:#7a4a00; border-left-color:#7a4a00;
-    border-right-color:#fffbcc; border-bottom-color:#fffbcc;
-  }
-  .retro-btn .ico{ font-size:16px; }
-
-  /* sparkle cursor trail */
-  .trail-dot{
-    position:fixed; pointer-events:none; z-index:9999;
-    font-size:14px; user-select:none;
-    animation: trail-fade 0.7s ease-out forwards;
-  }
-  @keyframes trail-fade{
-    0%{ opacity:1; transform:translateY(0) scale(1); }
-    100%{ opacity:0; transform:translateY(-18px) scale(0.4); }
-  }
-
-  .glitter-border{
-    border:4px dashed var(--hotpink);
-    outline:3px dotted var(--yellow);
-    outline-offset:3px;
-  }
-
-  /* ~*~ FAKE "END OF THE INTERNET" WEBRING POPUP ~*~ */
-  .end-modal-overlay{
-    display:none;
-    position:fixed; inset:0;
-    background:rgba(0,0,0,0.6);
-    z-index:9998;
-    align-items:center; justify-content:center;
-  }
-  .end-modal-overlay.show{ display:flex; }
-  .end-modal-box{
-    background:#c0c0c0;
-    border:2px outset #fff;
-    width:300px; max-width:88vw;
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif;
-    box-shadow:5px 5px 0 rgba(0,0,0,0.5);
-  }
-  .end-modal-titlebar{
-    background:linear-gradient(90deg, #000080, #1084d0);
-    color:#fff; font-weight:bold; font-size:13px;
-    padding:4px 8px;
-    display:flex; justify-content:space-between; align-items:center;
-  }
-  .end-modal-titlebar .x{
-    background:#c0c0c0; color:#000; border:1px outset #fff;
-    width:16px; height:16px; text-align:center; line-height:14px;
-    font-size:11px; cursor:pointer; font-family:Arial, sans-serif;
-  }
-  .end-modal-body{ padding:16px 14px 6px; color:#000; font-size:13px; text-align:center; }
-  .end-modal-body .icon{ font-size:30px; display:block; margin-bottom:8px; }
-  .end-modal-footer{ text-align:center; padding:10px 0 16px; }
-  .end-modal-footer button{
-    font-family:"Comic Sans MS", "Comic Neue", cursive, sans-serif; font-weight:bold; font-size:12px;
-    background:#c0c0c0; border:2px outset #fff; padding:5px 18px; cursor:pointer;
-  }
-  .end-modal-footer button:active{ border-style:inset; }
-
-  ::selection{ background: var(--hotpink); color:#000; }
 </style>
 </head>
 <body>
 
-  <div class="marquee-wrap led">
-    <span class="marquee-track led-text">✦ SCROLL DOWN FOR THE GOOD STUFF ✦ THIS PAGE IS 100% HAND-CODED HTML ✦ SCROLL DOWN FOR THE GOOD STUFF ✦ THIS PAGE IS 100% HAND-CODED HTML ✦</span>
-  </div>
-  <div class="flame-strip">
-    <div class="layer back"></div>
-    <div class="layer front"></div>
+<main id="home">
+  <h1>hi i'm ripo.</h1>
+
+  <div class="body-copy">
+    <p>i'm just a guy who can't leave an idea alone until it has a repo, a real deployment, and something people can actually open.</p>
+
+    <p>i'm currently finishing <a href="https://github.com/riporipo223/thesis-cryptoportfoliotracker" target="_blank" rel="noopener">cryptofolio</a>, my thesis, a crypto portfolio tracker with on-chain wallet reads and a fifo cost-basis engine for figuring out real gains and losses. the manuscript documenting it got rejected the first time out: not enough novelty, one wallet wasn't a real validation set, prototyping alone wasn't seen as research. so i spent weeks closing every one of those gaps: real code fixes, independent manual verification, expanded the validation to six real wallets including vitalik.eth and the ethereum foundation, found bugs along the way that actually mattered: silently truncated pagination, mis-rounded stablecoin amounts, failed transactions counted as real money moving. it's ready for review now.</p>
+
+    <p>alongside that i built <a href="https://ilovemusic.online" target="_blank" rel="noopener">ilovemusic</a>, open-source music software for dj workflows, a desktop app that pulls tracks from soundcloud, spotify, and bandcamp, reads bpm and key, and embeds the metadata properly. it's shipped for macos. i also run a public api for it off my own machine, and there's a cli sitting on top of that too.</p>
+
+    <p>some of this has worked out. some of it is still mid-fight. but i'd rather ship something real and messy than talk about something clean and hypothetical.</p>
   </div>
 
-  <div class="page">
+  <figure class="portrait">
+    <img src="ripo-portrait.jpg" alt="ripo, portrait at night">
+  </figure>
 
-    <div class="titlebar">
-      <div class="sparkle">*~*~*~*~*~*~*~*~*~*~*~*</div>
-      <h1 class="rainbow-text">RIPO'S HOMEPAGE</h1>
-      <div class="title-cat-box">
-        <div class="title-cat-trail"></div>
-        <span class="title-cat">🐱</span>
+  <div class="body-copy">
+    <p>still a student. still building.</p>
+  </div>
+
+  <div class="ps">
+    p.s: if you wanna contact me ping <a href="mailto:0xmochamadarif@gmail.com">0xmochamadarif@gmail.com</a>.
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="label">Work</div>
+        <a href="https://github.com/riporipo223/thesis-cryptoportfoliotracker" target="_blank" rel="noopener">CryptoFolio</a>
+        <a href="https://ilovemusic.online" target="_blank" rel="noopener">ILoveMusic</a>
+        <a href="https://github.com/riporipo223" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <div style="font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; font-size:14px;">
-        <span class="blink">●</span> a computer science guy building things on the internet <span class="blink">●</span>
+
+      <div class="footer-col">
+        <div class="label">Elsewhere</div>
+        <a href="https://www.linkedin.com/in/mochamad-arif-fahrizal/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/riporipo223" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/Ripo223" target="_blank" rel="noopener">X</a>
+        <a href="https://instagram.com/ripo__________" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://bsky.app/profile/ripo223.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+        <a href="https://www.roblox.com/users/3538014772/profile" target="_blank" rel="noopener">Roblox</a>
       </div>
-      <div class="sparkle">*~*~*~*~*~*~*~*~*~*~*~*</div>
     </div>
 
-    <div class="under-construction-bar">
-      🚧 <span>THIS SITE IS PERPETUALLY UNDER CONSTRUCTION</span> 🚧
-    </div>
-
-    <div class="navbar">
-      <a href="#about"><span class="icon-spin">✦</span> About Me</a>
-      <a href="#skills"><span class="icon-spin">✦</span> Skillz</a>
-      <a href="#guestbook"><span class="icon-spin">✦</span> Guestbook</a>
-      <a href="#contact"><span class="icon-spin">✦</span> E-Mail Me</a>
-    </div>
-
-    <div class="content">
-
-      <table class="section" id="about">
-        <caption>☆ About Me ☆</caption>
-        <tr>
-          <td colspan="2">
-            <div class="about-row">
-              <div class="avatar-box">
-                <div class="avatar-frame">
-                  <img src="images/ripoo.jpg" alt="Ripo holding a Panasonic camera by a lake" class="avatar-photo" width="120" height="120" decoding="async">
-                  <div class="avatar-dither"></div>
-                  <div class="avatar-badge">★ IT'S ME ★</div>
-                </div>
-                yes, this is actually me
-              </div>
-              <div style="flex:1; min-width:220px;">
-                Hi!! My name is <b style="color:var(--yellow)">Arif Fahrizal</b> (a.k.a. <b>Ripo</b>) and this is my little corner of the World Wide Web.
-                I’m a computer science undergrad who enjoys building full-stack apps, exploring blockchain technology, and shipping side projects late at night. ☕
-                I don’t update this portfolio very often, since I’m usually more active on GitHub, where most of my work, experiments, and ongoing projects live.
-                 ☕<br><br>
-                When I'm not coding you can probably find me messing with a new indie project idea. <span class="blink">NEW!!!</span>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <table class="section" id="projects">
-        <caption>☆ Pinned Project ☆</caption>
-        <tr>
-          <td>
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-              <b style="color:var(--yellow); font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; font-size:17px;">📌 ILoveMusic</b>
-              <span class="blink" style="color:var(--hotpink); font-weight:bold; font-size:12px;">★ ACTIVE BUILD ★</span>
-            </div>
-            <div style="margin-top:8px;">
-              idk, find out yourself by clicking this github button below 🤓 <span class="blink">★ HOT ★</span>
-            </div>
-            <div class="btn-row" style="justify-content:flex-start; margin-top:12px;">
-              <a class="retro-btn" href="https://github.com/riporipo223" target="_blank"><span class="ico">💻</span> VIEW ON GITHUB</a>
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <table class="section" id="skills">
-        <caption>☆ Skillz &amp; Toolz ☆</caption>
-        <tr>
-          <td>
-            <div class="badge-row">
-              <div class="badge b1">Next.js</div>
-              <div class="badge b2">TypeScript</div>
-              <div class="badge b3">Firebase</div>
-              <div class="badge b4">Ethers.js</div>
-              <div class="badge b5">React</div>
-              <div class="badge b1">Electron</div>
-              <div class="badge b2">Laravel</div>
-              <div class="badge b3">Vue</div>
-              <div class="badge b4">Tailwind</div>
-              <div class="badge b5">PostgreSQL</div>
-            </div>
-          </td>
-        </tr>
-      </table>
-
-      <div class="help-banner">
-        <div class="title-bar">
-          <h3>Help Ripo Survive</h3>
-          <div class="underline"></div>
-          <div class="sub">you can help fund the coffee, instant noodles, and 3AM debugging sessions that keep everything alive</div>
-        </div>
-        <div class="donate-btn-wrap">
-          <a class="donate-btn" href="https://youtu.be/dQw4w9WgXcQ?si=ywn2CgTHhuJE-LMZ" target="_blank" rel="noopener">Click Here<br>to "Donate"</a>
-        </div>
-        <div class="black-box">
-          <div class="appreciate">
-            ANY AMOUNT WOULD BE APPRECIATED!
-            <span class="small">(kidding... unless? 👀)</span>
-          </div>
-          <div class="visitors-label"><span class="live-dot"></span>LIVE SUPPORTER COUNT:</div>
-          <div class="live-counter" id="helpCounter">000000</div>
-          <div class="fine-print">
-            *counter updates in real time, we promise.<br>
-            every generous soul gets immortalized with a credit in this and every future project I ship.<br>
-            (no actual payment processor is hooked up - if you genuinely want to buy me a coffee, poke me on
-            <a href="https://github.com/riporipo223" target="_blank">GitHub</a>.)
-          </div>
-        </div>
-      </div>
-
-      <table class="section" id="guestbook">
-        <caption>☆ Sign My Guestbook! ☆</caption>
-        <tr><td>
-          <div class="guestbook" id="guestbookList">
-            <div class="entry"><b>web_surfer_99</b> wrote: FIFO engine is actually kinda genius ngl 🔥</div>
-          </div>
-          <form class="guestbook-form" id="guestbookForm">
-            <input type="text" id="gbName" placeholder="Your Name" maxlength="40" required>
-            <textarea id="gbMsg" placeholder="Leave a lil message..." maxlength="200" required></textarea>
-            <div class="btn-row" style="padding-top:2px;">
-              <button type="submit" class="retro-btn pink" style="border:none; cursor:pointer;">✍ SIGN THE GUESTBOOK ✍</button>
-            </div>
-          </form>
-          <div id="gbStatus"></div>
-        </td></tr>
-      </table>
-
-      <div style="text-align:center; margin:18px 0;">
-        <div style="font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; color:var(--cyan); margin-bottom:4px;" id="counterLabel">YOU ARE VISITOR NUMBER:</div>
-        <div class="counter-box" id="counter">------</div>
-        <div style="font-size:9px; color:#666; margin-top:4px;">(counts a real page view)</div>
-      </div>
-
-      <table class="section glitter-border" id="contact">
-        <caption>☆☆☆ E-MAIL ME PLZZZ ☆☆☆</caption>
-        <tr><td colspan="2">
-          <div style="text-align:center; margin-bottom:6px;">
-            <span class="shake">✉</span> <b class="rainbow-text">DON'T BE SHY, HIT ME UP!!!</b> <span class="shake">✉</span>
-          </div>
-          <div class="btn-row">
-            <a class="retro-btn" id="emailBtn" href="#"><span class="ico">✉️</span> EMAIL ME</a>
-          </div>
-          <div style="text-align:center; font-family:'Comic Sans MS', 'Comic Neue', cursive, sans-serif; color:var(--yellow); font-size:12px; margin:14px 0 6px;">
-            ☆ or catch me on the socials ☆
-          </div>
-          <div class="btn-row">
-            <a class="retro-btn cyan" href="https://github.com/riporipo223" target="_blank"><span class="ico">💻</span> GITHUB</a>
-            <a class="retro-btn pink" href="https://instagram.com/ripo__________" target="_blank"><span class="ico">📸</span> INSTAGRAM</a>
-            <a class="retro-btn green" href="https://twitter.com/riporipo223" target="_blank"><span class="ico">🐦</span> TWITTER</a>
-          </div>
-        </td></tr>
-        <tr><th>Status</th><td><span class="blink">●</span> probably shipping something right now</td></tr>
-      </table>
-
-      <div class="webring">
-        <div><span class="ring-line"><span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▂▃▅▇</span> MEMBER OF THE INDIE DEV WEBRING <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">▇▅▃▂</span></span></div>
-        <div style="margin-top:6px;">
-          « <a href="#" onclick="showEndModal(0); return false;">PREV SITE</a> &nbsp;|&nbsp; <a href="#" onclick="showEndModal(1); return false;">RANDOM SITE</a> &nbsp;|&nbsp; <a href="#" onclick="showEndModal(2); return false;">NEXT SITE</a> »
-        </div>
-      </div>
-
-      <div class="badge-row" style="margin-top:10px;">
-        <div class="badge b2">BEST VIEWED<br>IN NETSCAPE</div>
-        <div class="badge b1">MADE WITH<br>♥ AND CODE</div>
-        <div class="badge b4">100% NO<br>FRAMEWORK BLOAT*</div>
-        <div class="badge b3">HTML 3.2<br>COMPLIANT**</div>
-      </div>
-      <div style="text-align:center; font-size:10px; color:#666; margin-top:2px;">*lie &nbsp; **also a lie</div>
-
-    </div>
-
-    <footer>
-      © 1996 (well, 2026 pretending to be 1996)<br>
-      No frames. No problem.
-    </footer>
-
   </div>
-
-  <div class="flame-strip">
-    <div class="layer back"></div>
-    <div class="layer front"></div>
-  </div>
-  <div class="marquee-wrap led">
-    <span class="marquee-track led-text">⭐ THANKS FOR VISITING ⭐ COME BACK SOON ⭐ DON'T FORGET TO BOOKMARK THIS PAGE (CTRL+D) ⭐ SIGN THE GUESTBOOK BEFORE YOU LEAVE ⭐ HAVE A NICE DAY ٩(◕‿◕)۶ ⭐</span>
-  </div>
-
-  <div class="end-modal-overlay" id="endModal">
-    <div class="end-modal-box">
-      <div class="end-modal-titlebar">
-        <span>⚠ SYSTEM MESSAGE</span>
-        <span class="x" onclick="closeEndModal()">×</span>
-      </div>
-      <div class="end-modal-body">
-        <span class="icon">🚫</span>
-        <span id="endModalMsg">You have reached the edge of the known internet.</span>
-      </div>
-      <div class="end-modal-footer"><button onclick="closeEndModal()">OK, I'll turn back</button></div>
-    </div>
-  </div>
-
-<script type="module" src="./firebase.js"></script>
-<script>
-  // ~*~ fake "end of the internet" webring popup ~*~
-  var endMessages = [
-    "You have reached the edge of the known internet. There is nothing beyond this point.",
-    "Randomizing... randomizing... nope, still just this page. It's a webring of one.",
-    "Congratulations, you found the exit! Unfortunately it just leads right back here."
-  ];
-  function showEndModal(i){
-    document.getElementById('endModalMsg').textContent = endMessages[i] || endMessages[0];
-    document.getElementById('endModal').classList.add('show');
-  }
-  function closeEndModal(){
-    document.getElementById('endModal').classList.remove('show');
-  }
-
-  // ~*~ Firebase-backed visitor counter + guestbook ~*~
-  // These need your own Firebase project — fill in firebaseConfig below.
-  // Get it from: Firebase Console → Project Settings → General → Your apps → SDK setup and configuration.
-  // You can reuse the same Firebase project as CryptoFolio (these just add two new
-  // collections: "guestbook" and "siteStats") or spin up a brand new free project — either works.
-</script>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-  import {
-    getFirestore, collection, addDoc, getDocs, query, orderBy, limit,
-    doc, runTransaction, serverTimestamp
-  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDlEbikO7FknyYOqfBwejP7mdTkkZoeWBk",
-    authDomain: "ripo-c7b4b.firebaseapp.com",
-    projectId: "ripo-c7b4b",
-    storageBucket: "ripo-c7b4b.firebasestorage.app",
-    messagingSenderId: "275591690113",
-    appId: "1:275591690113:web:89339001c2dfb68d2a1a80"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // ---- visitor counter (siteStats/visitorCounter, field "count") ----
-  async function bumpVisitorCounter(){
-    var el = document.getElementById('counter');
-    try{
-      var ref = doc(db, 'siteStats', 'visitorCounter');
-      var newCount = await runTransaction(db, async function(tx){
-        var snap = await tx.get(ref);
-        var current = snap.exists() ? (snap.data().count || 0) : 0;
-        var next = current + 1;
-        tx.set(ref, { count: next });
-        return next;
-      });
-      el.textContent = String(newCount).padStart(6, '0');
-    }catch(e){
-      el.textContent = '??????';
-      console.error('visitor counter error:', e);
-    }
-  }
-  bumpVisitorCounter();
-
-  // ---- guestbook (collection "guestbook", docs { name, msg, ts }) ----
-  var listEl = document.getElementById('guestbookList');
-  var formEl = document.getElementById('guestbookForm');
-  var statusEl = document.getElementById('gbStatus');
-  var gbCol = collection(db, 'guestbook');
-
-  function renderEntries(entries){
-    listEl.innerHTML = '';
-    if (!entries || entries.length === 0){
-      entries = [ { name:'web_surfer_99', msg:'FIFO engine is actually kinda genius ngl 🔥' } ];
-    }
-    entries.forEach(function(e){
-      var div = document.createElement('div');
-      div.className = 'entry';
-      var b = document.createElement('b');
-      b.textContent = (e.name || 'anonymous_surfer') + ' wrote: ';
-      div.appendChild(b);
-      div.appendChild(document.createTextNode(e.msg || ''));
-      listEl.appendChild(div);
-    });
-  }
-
-  async function loadEntries(){
-    try{
-      var q = query(gbCol, orderBy('ts', 'desc'), limit(40));
-      var snap = await getDocs(q);
-      var entries = snap.docs.map(function(d){ return d.data(); });
-      renderEntries(entries);
-    }catch(e){
-      renderEntries(null);
-      console.error('guestbook load error:', e);
-    }
-  }
-
-  if (formEl){
-    formEl.addEventListener('submit', async function(ev){
-      ev.preventDefault();
-      var nameEl = document.getElementById('gbName');
-      var msgEl = document.getElementById('gbMsg');
-      var name = (nameEl.value || '').trim().slice(0, 40) || 'anonymous_surfer';
-      var msg = (msgEl.value || '').trim().slice(0, 200);
-      if (!msg) return;
-      try{
-        await addDoc(gbCol, { name: name, msg: msg, ts: serverTimestamp() });
-        statusEl.textContent = '✅ signed! thanks for stopping by, ' + name + '!';
-        nameEl.value = '';
-        msgEl.value = '';
-        loadEntries();
-      }catch(e){
-        statusEl.textContent = "⚠ couldn't save your entry right now — try again in a bit!";
-        console.error('guestbook submit error:', e);
-      }
-    });
-  }
-
-  loadEntries();
-</script>
-<script>
-
-  // ~*~ email me button — opens the visitor's mail client with a pre-filled note ~*~
-  (function(){
-    var btn = document.getElementById('emailBtn');
-    if (!btn) return;
-    var subject = "🖥️ Hey Ripo! Found You Via Your 1996 Homepage 🖥️";
-    var body = "Hi Ripo,\n\nI just surfed my way onto your totally rad homepage and wanted to say hi!\n\n";
-    btn.href = 'mailto:0xmochamadarif@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  })();
-
-  // sparkle cursor trail ~*~ so alay ~*~
-  (function(){
-    var glyphs = ['✦','★','✧','☆','✨','💖'];
-    var last = 0;
-    document.addEventListener('mousemove', function(e){
-      var now = Date.now();
-      if (now - last < 60) return; // throttle — keeps this light on lower-end devices
-      last = now;
-      var el = document.createElement('span');
-      el.className = 'trail-dot';
-      el.textContent = glyphs[Math.floor(Math.random()*glyphs.length)];
-      el.style.left = (e.clientX - 6) + 'px';
-      el.style.top = (e.clientY - 6) + 'px';
-      el.style.color = ['#ff00cc','#ffff00','#00ffff','#00ff66'][Math.floor(Math.random()*4)];
-      document.body.appendChild(el);
-      setTimeout(function(){ el.remove(); }, 700);
-    }, { passive: true });
-  })();
-
-  // "live" supporter counter for the Help Ripo banner — purely a fun front-end simulation,
-  // ticks up on its own so it feels alive; nothing is actually being tracked or stored.
-  (function(){
-    var el = document.getElementById('helpCounter');
-    if (!el) return;
-    var count = 481 + Math.floor(Math.random() * 60);
-    function render(){ el.textContent = String(count).padStart(6, '0'); }
-    render();
-    function tick(){
-      count += Math.floor(Math.random() * 3) + 1;
-      render();
-      setTimeout(tick, 3000 + Math.random() * 4000);
-    }
-    setTimeout(tick, 3000 + Math.random() * 4000);
-  })();
-</script>
+</footer>
 
 </body>
 </html>
